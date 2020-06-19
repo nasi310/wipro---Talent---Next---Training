@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Solution1 {  
+    public static void main(String[] args) {  
+          
+    	Scanner scan=new Scanner(System.in);
+      //First element is the size of array.
+    	int first=scan.nextInt();
+    	scan=new Scanner(System.in);
+    	Integer number[]=new Integer[first];
+    	for(int i=0;i<first;i++)
+    	{
+    		number[i]=scan.nextInt();
+    	}
+        ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(number));  
+         System.out.println(list);
+        Set<Integer> uniqueSet = new HashSet<Integer>(list);  
+        for (Integer i : uniqueSet) 
+        {  
+             Collections.frequency(list, i);
+             System.out.print(i+" ");  
+        }             
+    }       
+}
+
+
+/* Output:
+10
+2
+3
+2
+2
+3
+8
+11
+8
+7
+5
+[2, 3, 2, 2, 3, 8, 11, 8, 7, 5]
+2 3 5 7 8 11 
+*/
