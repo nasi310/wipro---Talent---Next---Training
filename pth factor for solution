@@ -1,0 +1,34 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+public class pthfactorSolution {
+    public static void main(String[] args) throws IOException {
+        long n=10;
+        long p=3;    
+        long []hold=new long[20];
+        int j=0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+            {
+                hold[j]=i;
+                j++;
+            }                                                         //j should be incremented only if i is a factor of n so added in a module
+        }
+        if (p<j)                                                   // changed the condition so that if p<j is true,it prints the pth factor,else 0
+        {
+            int index=(int)(p-1);
+            System.out.println(hold[index]);
+        }
+        else
+        {
+            System.out.println ("0");
+        }
+    }
+}
+
+/*Ouput
+5  return the 3rd value of array.
+*
