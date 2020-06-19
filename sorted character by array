@@ -1,0 +1,68 @@
+/* Find a sorted sequence of characters from a two unsorted character array. 
+Both the chracers should be merged and sorted into a new array with ascending order. 
+Multiple frequency characters should be considered as single occurence
+*/
+
+import java.io.*;
+import java.util.*;
+
+public class SortedCharacterArray
+{
+public static void main(String args[]) throws Exception
+{
+//The java Scanner class does not have any function to get a character as an input. So, you’ll have to accept a string and put it into the character array explicitly.
+
+String inp1,input1;
+Scanner sc = new Scanner(System.in);
+char arr1[] = new char[5];
+System.out.println("Enter character array1: ");
+inp1 = sc.next();
+input1=inp1.toLowerCase();
+//Converting string into character
+for(int i=0; i< 5; i++)
+{	
+arr1[i] = input1.charAt(i);
+}
+String inp2,input2;
+char arr2[] = new char[5];
+System.out.println("Enter character array2: ");
+inp2 = sc.next();
+input2=inp2.toLowerCase();
+for(int i=0; i< 5; i++)
+{	
+arr2[i] = input2.charAt(i);
+}
+// Put the char array element into Set since it is eliminate duplicate by default.
+
+Set<Character> s1=new LinkedHashSet<>();
+Set<Character> s2=new LinkedHashSet<>();
+ for (int i = 0; i < arr1.length; i++) {
+          s1.add(new Character(arr1[i]));
+      }
+ for (int i = 0; i < arr2.length; i++) {
+          s2.add(new Character(arr2[i]));
+      }
+// TreeSet has the inbuild property of sorting
+Set<Character> joined=new TreeSet<>();
+// For joining the two sets.
+joined.addAll(s1);
+joined.addAll(s2);
+// For displaying the output
+for(char out:joined)
+System.out.print(out);
+}
+}
+
+/*Output:
+F:\Wipro\Work>javac SortedCharacterArray.java
+
+F:\Wipro\Work>java SortedCharacterArray
+Enter character array1:
+helpm
+Enter character array2:
+WAITE
+aehilmptw
+F:\Wipro\Work> 
+*/
+
+© 2020 GitHub, Inc.
