@@ -1,0 +1,49 @@
+// To extract the vowels in a given string and print the vowels in the alphabetical order without duplicate.
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.lang.*;
+import java.util.regex.*;
+
+public class ExtractVowels
+ {
+    public static void main(String args[] ) throws Exception
+ {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+System.out.println("Enter the string");
+        Scanner scan=new Scanner(System.in);
+        String input1=scan.nextLine();
+       Set<Character> vow=new LinkedHashSet<Character>();
+       Set<Character> nonvow=new LinkedHashSet<Character>();
+        int len=input1.length();
+        for(int i=0;i<len;i++)
+        {
+            char ch=input1.charAt(i);
+            if (ch==' ')                       //Loop Moves to next Iteration If  Empty Space is encountered 
+                continue;
+            if(Character.isAlphabetic(ch))
+            {
+                if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+                                vow.add(ch);
+            }
+            else
+	nonvow.add(ch);	
+                    
+        }
+int vowsize=vow.size();
+int nonvowsize=nonvow.size();
+if(vowsize!=0)
+{
+        for(char c:vow)
+        {
+            System.out.print(c);
+        }
+}
+else
+{
+System.out.println("Thank You");
+}
+}
+}
